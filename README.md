@@ -1,6 +1,6 @@
 # libphonenumber
 
-> **TL;DR** run `./build.sh` to generate a bundled file compatible with browsers
+> **TL;DR** run `./build.sh <version>` to generate the bundle file
 
 Google provides a [libphonenumber version for Javascript](https://github.com/googlei18n/libphonenumber/blob/master/javascript/)
 however it's implemented using Google's Closure framework, which allows the

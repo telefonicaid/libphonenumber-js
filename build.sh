@@ -2,10 +2,16 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+if [ "$1" == "" ]; then
+  BRANCH="master"
+  DESTINATION_FILE="libphonenumber.js"
+else
+  BRANCH="libphonenumber-$1"
+  DESTINATION_FILE="$BRANCH.js"
+fi
+
 CLOSURE_SERVICE="http://closure-compiler.appspot.com/compile"
-DESTINATION_FILE="$DIR/libphonenumber.js"
-VERSION="libphonenumber-7.0.4"  # use "master" for bleeding edge
-BASE_URL="https://raw.githubusercontent.com/googlei18n/libphonenumber/$VERSION/javascript/i18n/phonenumbers"
+BASE_URL="https://raw.githubusercontent.com/googlei18n/libphonenumber/$BRANCH/javascript/i18n/phonenumbers"
 
 output=$(
     curl                                                \
@@ -41,3 +47,5 @@ cat << EOF > "$DESTINATION_FILE"
 $output
 })(typeof exports === 'undefined' ? this : exports);
 EOF
+
+node "$DIR/test.js" "$DESTINATION_FILE"
