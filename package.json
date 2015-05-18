@@ -1,0 +1,40 @@
+{
+  "name": "libphonenumber-js",
+  "version": "7.0.5",
+  "description": "libphonenumber closure-free bundle builder",
+  "main": "libphonenumber.js",
+  "files": [
+    "LICENSE",
+    "LICENSE.libphonenumber",
+    "README.md",
+    "build.sh",
+    "bootstrap.js",
+    "libphonenumber.js",
+    "libphonenumber-*.js",
+    "test.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@pdihub.hi.inet:imv/libphonenumber-js.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "node test.js libphonenumber.js",
+    "build": "./build.sh"
+  },
+  "keywords": [
+    "libphonenumber",
+    "e164",
+    "phone",
+    "phonenumber"
+  ],
+  "author": "Iván -DrSlump- Montes",
+  "license": "AGPL3",
+  "bugs": {
+    "url": "http://pdihub.hi.inet/imv/libphonenumber-js/issues"
+  },
+  "homepage": "http://pdihub.hi.inet/imv/libphonenumber-js"
+}
