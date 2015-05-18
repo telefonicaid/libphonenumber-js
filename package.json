@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@pdihub.hi.inet:imv/libphonenumber-js.git"
+    "url": "git@github.com:telefonicaid/libphonenumber-js.git"
   },
   "dependencies": {
   },
@@ -34,7 +34,7 @@
   "author": "Iván -DrSlump- Montes",
   "license": "AGPL3",
   "bugs": {
-    "url": "http://pdihub.hi.inet/imv/libphonenumber-js/issues"
+    "url": "http://github.com/telefonicaid/libphonenumber-js/issues"
   },
-  "homepage": "http://pdihub.hi.inet/imv/libphonenumber-js"
+  "homepage": "http://github.com/telefonicaid/libphonenumber-js"
 }
