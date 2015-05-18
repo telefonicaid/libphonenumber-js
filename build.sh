@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (C) 2015 Telefonica I+D
+# GNU AFFERO GENERAL PUBLIC LICENSE 3 (See LICENSE for details)
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 

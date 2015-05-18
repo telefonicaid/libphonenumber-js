@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright (C) 2015 Telefonica I+D
+ * GNU AFFERO GENERAL PUBLIC LICENSE 3 (See LICENSE for details)
+ */
+
 goog.require('i18n.phonenumbers.AsYouTypeFormatter');
 goog.require('i18n.phonenumbers.PhoneNumber');
 goog.require('i18n.phonenumbers.PhoneNumber.CountryCodeSource');

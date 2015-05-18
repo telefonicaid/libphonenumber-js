@@ -57,3 +57,11 @@ the [release notes](https://github.com/googlei18n/libphonenumber/blob/master/jav
 > Obviously if Google refactors the structure of the code, its file names and
   so on, then the build script will need to reflect those changes.
 
+
+# License
+
+GNU Affero General Public License 3, see [the LICENSE file](./LICENSE) for details.
+
+The bundled [libphonenumber](https://github.com/googlei18n/libphonenumber) is
+copyright The Libphonenumber Authors and licensed under Apache License 2.0.
+See [its license file](./LICENSE.libphonenumber) for details.
