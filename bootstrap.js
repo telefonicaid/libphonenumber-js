@@ -53,6 +53,11 @@ function augmentFromDescriptor (ctor) {
         proto[name + 'Array'] = partial(proto.array$Values, tag);
         proto[name + 'Count'] = partial(proto.count$Values, tag);
     }
+
+    proto['equals'] = proto.equals;
+    proto['copyFrom'] = proto.copyFrom;
+    proto['mergeFrom'] = proto.mergeFrom;
+    proto['clone'] = proto.clone;
 }
 
 augmentFromDescriptor(i18n.phonenumbers.PhoneNumber);
