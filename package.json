@@ -1,6 +1,6 @@
 {
   "name": "libphonenumber-js",
-  "version": "7.0.5",
+  "version": "7.0.11",
   "description": "libphonenumber closure-free bundle builder",
   "main": "libphonenumber.js",
   "files": [
