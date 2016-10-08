@@ -3,6 +3,7 @@
   "version": "7.0.11",
   "description": "libphonenumber closure-free bundle builder",
   "main": "libphonenumber.js",
+  "typings": "index",
   "files": [
     "LICENSE",
     "LICENSE.libphonenumber",
