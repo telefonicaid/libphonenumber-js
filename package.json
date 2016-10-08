@@ -1,6 +1,6 @@
 {
   "name": "libphonenumber-js",
-  "version": "7.0.11",
+  "version": "7.7.2",
   "description": "libphonenumber closure-free bundle builder",
   "main": "libphonenumber.js",
   "typings": "index",
@@ -12,6 +12,7 @@
     "bootstrap.js",
     "libphonenumber.js",
     "libphonenumber-*.js",
+    "index.d.ts",
     "test.js"
   ],
   "repository": {

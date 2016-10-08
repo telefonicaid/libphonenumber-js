@@ -1,5 +1,5 @@
 declare namespace libphonenumber {
-	
+
 	// goog.string.StringBuffer
 	type StringBuffer = any;
 
@@ -9,7 +9,7 @@ declare namespace libphonenumber {
 	    NATIONAL,
 	    RFC3966
 	}
-	
+
 	export enum PhoneNumberType {
 		FIXED_LINE,
 		MOBILE,
@@ -24,7 +24,7 @@ declare namespace libphonenumber {
 		VOICEMAIL,
 		UNKNOWN
 	}
-	
+
 	export enum Error {
  		INVALID_COUNTRY_CODE,
   		NOT_A_NUMBER,
@@ -32,17 +32,18 @@ declare namespace libphonenumber {
   		TOO_SHORT_NSN,
 		TOO_LONG
 	}
-	
+
 	export class NumberFormat {
 		clone(): NumberFormat;
-		
+		mergeFrom(value: NumberFormat): void;
+
 		getPattern(): string|null;
 		getPatternOrDefault(): string;
 		setPattern(value: string): void;
 		hasPattern(): boolean;
 		patternCount(): string;
 		clearPattern(): void;
-		
+
 		getFormat(): string|null;
 		getFormatOrDefault(): string;
 		setFormat(value: string): void;
@@ -55,29 +56,32 @@ declare namespace libphonenumber {
 		setLeadingDigitsPattern(value: string): void;
 		hasLeadingDigitsPattern(): boolean;
 		leadingDigitsPatternCount(): string;
-		clearLeadingDigitsPattern(): void;				
+		clearLeadingDigitsPattern(): void;
 
 		// TODO:
 		// NationalPrefixFormattingRule: string
 		// NationalPrefixOptionalWhenFormatting: boolean
-		// DomesticCarrierCodeFormattingRule: string		
+		// DomesticCarrierCodeFormattingRule: string
 	}
-	
+
 	export class PhoneNumberDesc {
 		clone(): PhoneNumberDesc;
-		
+		mergeFrom(value: PhoneNumberDesc): void;
+
 		// NationalNumberPattern: string
 		// PossibleNumberPattern: string
 		// PossibleLength: number
 		// PossibleLengthLocalOnly: number
 		// ExampleNumber: string
 		// NationalNumberMatcherData: string
-		// PossibleNumberMatcherData: string		
+		// PossibleNumberMatcherData: string
 	}
-	
+
 	export class PhoneMetadata {
 		clone(): PhoneMetadata;
-		
+		mergeFrom(value: PhoneMetadata): void;
+
+
 		// GeneralDesc: PhoneNumberDesc
 		// FixedLine: PhoneNumberDesc
 		// Mobile: PhoneNumberDesc
@@ -106,15 +110,17 @@ declare namespace libphonenumber {
 		// LeadingDigits: string
 		// LeadingZeroPossible: boolean
 	}
-	
+
 	export class PhoneMetadataCollection {
 		clone(): PhoneMetadataCollection;
-		
+		mergeFrom(value: PhoneMetadataCollection): void;
+
 		// Metadata: PhoneMetadata[]
 	}
 
 	export class PhoneNumber {
 		clone(): PhoneNumber;
+		mergeFrom(value: PhoneNumber): void;
 
 		getCountryCode(): number|null;
 		getCountryCodeOrDefault(): number;
@@ -157,13 +163,13 @@ declare namespace libphonenumber {
 		hasRawInput(): string;
 		rawInputCount(): number;
 		clearRawInput(): void;
-		
+
 		getCountryCodeSource(): PhoneNumber.CountryCodeSource|null;
 		getCountryCodeSourceOrDefault(): PhoneNumber.CountryCodeSource;
 		setCountryCodeSource(value: PhoneNumber.CountryCodeSource): void;
 		hasCountryCodeSource(): PhoneNumber.CountryCodeSource;
 		countryCodeSourceCount(): number;
-		clearCountryCodeSource(): void;		
+		clearCountryCodeSource(): void;
 
 		getPreferredDomesticCarrierCode(): string|null;
 		getPreferredDomesticCarrierCodeOrDefault(): string;
@@ -182,11 +188,11 @@ declare namespace libphonenumber {
 			FROM_DEFAULT_COUNTRY
 		}
 	}
-	
+
 	export class PhoneNumberUtil {
 		static REGION_CODE_FOR_NON_GEO_ENTITY: number;
 	    static getInstance(): PhoneNumberUtil
-		
+
 		extractPossibleNumber(number: string): string;
 		isViablePhoneNumber(number: string): boolean;
 		normalize(number: string): string;
@@ -229,7 +235,7 @@ declare namespace libphonenumber {
 		isPossibleNumberString(number: string, regionDialingFrom: string): boolean;
 		truncateTooLongNumber(number: PhoneNumber): boolean;
 		extractCountryCode(fullNumber: StringBuffer, nationalNumber: StringBuffer): number;
-		maybeExtractCountryCode(number: string, defaultRegionMetadata: PhoneMetadata, nationalNumber: StringBuffer, keepRawInput: boolean, phoneNumber: PhoneNumber): number; 
+		maybeExtractCountryCode(number: string, defaultRegionMetadata: PhoneMetadata, nationalNumber: StringBuffer, keepRawInput: boolean, phoneNumber: PhoneNumber): number;
 		maybeStripInternationalPrefixAndNormalize(number: StringBuffer, possibleIddPrefix: string): PhoneNumber.CountryCodeSource;
 		maybeStripNationalPrefixAndCarrierCode(number: StringBuffer, metadata: PhoneMetadata, carrierCode: StringBuffer): boolean;
 		maybeStripExtension(number: StringBuffer): string;
@@ -239,7 +245,7 @@ declare namespace libphonenumber {
 		canBeInternationallyDialled(number: PhoneNumber): boolean;
 
 
-		
+
 	}
 	module PhoneNumberUtil {
 		enum MatchType {
@@ -249,14 +255,14 @@ declare namespace libphonenumber {
   			NSN_MATCH,
   			EXACT_MATCH
 		}
-		
+
 		enum ValidationResult {
 			IS_POSSIBLE,
 			INVALID_COUNTRY_CODE,
 			TOO_SHORT,
 			TOO_LONG
 		}
-	}	
+	}
 
     export class AsYouTypeFormatter {
         constructor(region: string);
